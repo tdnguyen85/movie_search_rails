@@ -1,0 +1,20 @@
+
+<h1>The results for <%= @q %> is the following:</h1>
+
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Released</th>
+	</tr>
+
+<% @search_results["Search"].each do |item| %>
+	<tr>
+		<td>
+			<a href="/single_movie_info?id=<%= item["imdbID"] %>"><%= item["Title"] %></a>
+			
+		</td>
+		<td><%= item["Year"] %></td>
+	</tr>
+	<% end %>
+
+</table>
